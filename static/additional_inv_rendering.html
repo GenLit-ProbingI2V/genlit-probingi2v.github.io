@@ -1,0 +1,216 @@
+<html>
+
+<head>
+  <script type="text/javascript" language="javascript"
+    src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+  <script type="text/javascript" language="javascript"
+    src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+  <script type="text/javascript" language="javascript"
+    src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.colVis.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+
+  <link
+    href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+  </link>
+  <style>
+    .plotly-graph-div {
+      margin: auto;
+    }
+
+    table {
+      background-color: white;
+      color: white;
+    }
+
+    table.dataTable.compact tbody th,
+    table.dataTable.compact tbody td {
+      padding: 4px;
+      background-color: black;
+    }
+
+    .dataTables_wrapper .dataTables_length,
+    .dataTables_wrapper .dataTables_filter,
+    .dataTables_wrapper .dataTables_info,
+    .dataTables_wrapper .dataTables_processing,
+    .dataTables_wrapper .dataTables_paginate {
+      color: #000000;
+    }
+
+    table.dataTable.cell-border tbody th,
+    table.dataTable.cell-border tbody td {
+      border-top: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+      border-bottom: 1px solid white;
+    }
+
+    table.dataTable thead td {
+      border-bottom: 1px solid #fff;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+      box-sizing: border-box;
+      display: inline-block;
+      min-width: 1.5em;
+      padding: 0.5em 1em;
+      margin-left: 2px;
+      text-align: center;
+      text-decoration: none !important;
+      cursor: pointer;
+      *cursor: hand;
+      color: #fff !important;
+      border: 1px solid transparent;
+      border-radius: 2px;
+    }
+  </style>
+
+</head>
+
+<body bgcolor='white'>
+  <hr>
+  <div
+    style="text-align:center; font-family: 'Google Sans', sans-serif; font-size:30px;color:black;">
+    GenLit: Probing Image-to-Video Models with Controllable Relighting <br> Additional results for Inverse Rendering Baseline </div><br>
+  <div
+    style="text-align:center; font-family: 'Google Sans', sans-serif; font-size:20px;color:black;">
+    <a href="../index.html"><u>Back to project page</u></a>
+  </div>
+  <table id="myTable" class="cell-border compact stripe">
+    <thead>
+      <tr style="font-family: 'Google Sans', sans-serif; color:#000000">
+        <th>Input </th>
+        <th>Inv Rendering Prediction</th>
+        <th>Ours</th>
+        <th>GT</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <!-- ####################################### -->
+      <tr>
+        <td><img
+            src="./data/inv_rendering/input/2dae397d69344200aed7be6c03f7e125.png"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/inv_rendering/inv_rendering/2dae397d69344200aed7be6c03f7e125.mp4"
+              type="video/mp4">
+          </video></td>
+          <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/inv_rendering/ours/2dae397d69344200aed7be6c03f7e125.mp4"
+              type="video/mp4">
+          </video></td>
+          <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/inv_rendering/gt/2dae397d69344200aed7be6c03f7e125.mp4"
+              type="video/mp4">
+          </video></td>
+        </video></td>
+      </tr>
+      <!-- ####################################### -->
+      <!-- ####################################### -->
+      <!-- <tr>
+        <td><img
+            src="./data/inv_rendering/input/cd55004dcab14b32b702c197213b297a.png"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/inv_rendering/inv_rendering/cd55004dcab14b32b702c197213b297a.mp4"
+              type="video/mp4">
+          </video></td>
+          <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/inv_rendering/ours/cd55004dcab14b32b702c197213b297a.mp4"
+              type="video/mp4">
+          </video></td>
+          <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/inv_rendering/gt/cd55004dcab14b32b702c197213b297a.mp4"
+              type="video/mp4">
+          </video></td>
+        </video></td>
+      </tr> -->
+      <!-- ####################################### -->
+      <!-- ####################################### -->
+      <tr>
+        <td><img
+            src="./data/inv_rendering/input/a37a0ea77f654aee830920ed148ec0f2.png"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/inv_rendering/inv_rendering/a37a0ea77f654aee830920ed148ec0f2.mp4"
+              type="video/mp4">
+          </video></td>
+          <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/inv_rendering/ours/a37a0ea77f654aee830920ed148ec0f2.mp4"
+              type="video/mp4">
+          </video></td>
+          <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/inv_rendering/gt/a37a0ea77f654aee830920ed148ec0f2.mp4"
+              type="video/mp4">
+          </video></td>
+        </video></td>
+      </tr>
+      <!-- ####################################### -->
+      <!-- ####################################### -->
+      <tr>
+        <td><img
+            src="./data/inv_rendering/input/185b612a223d4dd5b03e55376429574f.png"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/inv_rendering/inv_rendering/185b612a223d4dd5b03e55376429574f.mp4"
+              type="video/mp4">
+          </video></td>
+          <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/inv_rendering/ours/185b612a223d4dd5b03e55376429574f.mp4"
+              type="video/mp4">
+          </video></td>
+          <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/inv_rendering/gt/185b612a223d4dd5b03e55376429574f.mp4"
+              type="video/mp4">
+          </video></td>
+        </video></td>
+      </tr>
+      <!-- ####################################### -->
+      <!-- ####################################### -->
+      <tr>
+        <td><img
+            src="./data/inv_rendering/input/c3132a723f434ce2b94e2e563420ef7a.png"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/inv_rendering/inv_rendering/c3132a723f434ce2b94e2e563420ef7a.mp4"
+              type="video/mp4">
+          </video></td>
+          <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/inv_rendering/ours/c3132a723f434ce2b94e2e563420ef7a.mp4"
+              type="video/mp4">
+          </video></td>
+          <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/inv_rendering/gt/c3132a723f434ce2b94e2e563420ef7a.mp4"
+              type="video/mp4">
+          </video></td>
+        </video></td>
+      </tr>
+      <!-- ####################################### -->
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+
+
+</html>

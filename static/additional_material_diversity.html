@@ -1,0 +1,406 @@
+<html>
+
+<head>
+  <script type="text/javascript" language="javascript"
+    src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+  <script type="text/javascript" language="javascript"
+    src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+  <script type="text/javascript" language="javascript"
+    src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.colVis.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+
+  <link
+    href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+  </link>
+  <style>
+    .plotly-graph-div {
+      margin: auto;
+    }
+
+    table {
+      background-color: white;
+      color: white;
+    }
+
+    table.dataTable.compact tbody th,
+    table.dataTable.compact tbody td {
+      padding: 4px;
+      background-color: black;
+    }
+
+    .dataTables_wrapper .dataTables_length,
+    .dataTables_wrapper .dataTables_filter,
+    .dataTables_wrapper .dataTables_info,
+    .dataTables_wrapper .dataTables_processing,
+    .dataTables_wrapper .dataTables_paginate {
+      color: #000000;
+    }
+
+    table.dataTable.cell-border tbody th,
+    table.dataTable.cell-border tbody td {
+      border-top: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+      border-bottom: 1px solid white;
+    }
+
+    table.dataTable thead td {
+      border-bottom: 1px solid #fff;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+      box-sizing: border-box;
+      display: inline-block;
+      min-width: 1.5em;
+      padding: 0.5em 1em;
+      margin-left: 2px;
+      text-align: center;
+      text-decoration: none !important;
+      cursor: pointer;
+      *cursor: hand;
+      color: #fff !important;
+      border: 1px solid transparent;
+      border-radius: 2px;
+    }
+  </style>
+
+</head>
+
+<body bgcolor='white'>
+  <hr>
+  <div
+    style="text-align:center; font-family: 'Google Sans', sans-serif; font-size:30px;color:black;">
+    GenLit: Probing Image-to-Video Models with Controllable Relighting <br> For each object we render the results for: Rough, Metal, Plastic, Glass </div><br>
+  <div
+    style="text-align:center; font-family: 'Google Sans', sans-serif; font-size:20px;color:black;">
+    <a href="../index.html"><u>Back to project page</u></a>
+  </div>
+  <table id="myTable" class="cell-border compact stripe">
+    <thead>
+      <tr style="font-family: 'Google Sans', sans-serif; color:#000000">
+        <th>Input </th>
+        <th>Prediction</th>
+        <th>GT</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+    <!-- ####################################### -->
+    <tr>
+      <td><img
+          src="./data/500_objects_mat/input/522de1d948004544b07cd36a078f49a6/rough.png"
+          style="max-width:100%;height:auto;"></td>
+      <td><video width="100%" loop autoplay laysinline muted>
+          <source
+            src="./data/500_objects_mat/ours/522de1d948004544b07cd36a078f49a6/rough.mp4"
+            type="video/mp4">
+        </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+          <source
+            src="./data/500_objects_mat/gt/522de1d948004544b07cd36a078f49a6/rough.mp4"
+            type="video/mp4">
+        </video></td>
+    </tr>
+    <tr>
+      <td><img
+          src="./data/500_objects_mat/input/522de1d948004544b07cd36a078f49a6/Metal.png"
+          style="max-width:100%;height:auto;"></td>
+      <td><video width="100%" loop autoplay laysinline muted>
+          <source
+            src="./data/500_objects_mat/ours/522de1d948004544b07cd36a078f49a6/Metal.mp4"
+            type="video/mp4">
+        </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+          <source
+            src="./data/500_objects_mat/gt/522de1d948004544b07cd36a078f49a6/Metal.mp4"
+            type="video/mp4">
+        </video></td>
+    </tr>
+    <tr>
+      <td><img
+          src="./data/500_objects_mat/input/522de1d948004544b07cd36a078f49a6/plastic.png"
+          style="max-width:100%;height:auto;"></td>
+      <td><video width="100%" loop autoplay laysinline muted>
+          <source
+            src="./data/500_objects_mat/ours/522de1d948004544b07cd36a078f49a6/plastic.mp4"
+            type="video/mp4">
+        </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+          <source
+            src="./data/500_objects_mat/gt/522de1d948004544b07cd36a078f49a6/plastic.mp4"
+            type="video/mp4">
+        </video></td>
+    </tr>
+    <tr>
+      <td><img
+          src="./data/500_objects_mat/input/522de1d948004544b07cd36a078f49a6/glass.png"
+          style="max-width:100%;height:auto;"></td>
+      <td><video width="100%" loop autoplay laysinline muted>
+          <source
+            src="./data/500_objects_mat/ours/522de1d948004544b07cd36a078f49a6/glass.mp4"
+            type="video/mp4">
+        </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+          <source
+            src="./data/500_objects_mat/gt/522de1d948004544b07cd36a078f49a6/glass.mp4"
+            type="video/mp4">
+        </video></td>
+    </tr>
+    <!-- ####################################### -->
+    <tr>
+      <td><img
+          src="./data/500_objects_mat/input/bcd15948e8124461bb811e95bf848552/rough.png"
+          style="max-width:100%;height:auto;"></td>
+      <td><video width="100%" loop autoplay laysinline muted>
+          <source
+            src="./data/500_objects_mat/ours/bcd15948e8124461bb811e95bf848552/rough.mp4"
+            type="video/mp4">
+        </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+          <source
+            src="./data/500_objects_mat/gt/bcd15948e8124461bb811e95bf848552/rough.mp4"
+            type="video/mp4">
+        </video></td>
+    </tr>
+    <tr>
+      <td><img
+          src="./data/500_objects_mat/input/bcd15948e8124461bb811e95bf848552/Metal.png"
+          style="max-width:100%;height:auto;"></td>
+      <td><video width="100%" loop autoplay laysinline muted>
+          <source
+            src="./data/500_objects_mat/ours/bcd15948e8124461bb811e95bf848552/Metal.mp4"
+            type="video/mp4">
+        </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+          <source
+            src="./data/500_objects_mat/gt/bcd15948e8124461bb811e95bf848552/Metal.mp4"
+            type="video/mp4">
+        </video></td>
+    </tr>
+    <tr>
+      <td><img
+          src="./data/500_objects_mat/input/bcd15948e8124461bb811e95bf848552/plastic.png"
+          style="max-width:100%;height:auto;"></td>
+      <td><video width="100%" loop autoplay laysinline muted>
+          <source
+            src="./data/500_objects_mat/ours/bcd15948e8124461bb811e95bf848552/plastic.mp4"
+            type="video/mp4">
+        </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+          <source
+            src="./data/500_objects_mat/gt/bcd15948e8124461bb811e95bf848552/plastic.mp4"
+            type="video/mp4">
+        </video></td>
+    </tr>
+    <tr>
+      <td><img
+          src="./data/500_objects_mat/input/bcd15948e8124461bb811e95bf848552/glass.png"
+          style="max-width:100%;height:auto;"></td>
+      <td><video width="100%" loop autoplay laysinline muted>
+          <source
+            src="./data/500_objects_mat/ours/bcd15948e8124461bb811e95bf848552/glass.mp4"
+            type="video/mp4">
+        </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+          <source
+            src="./data/500_objects_mat/gt/bcd15948e8124461bb811e95bf848552/glass.mp4"
+            type="video/mp4">
+        </video></td>
+    </tr>
+    <!-- ####################################### -->
+    <tr>
+      <td><img
+          src="./data/500_objects_mat/input/c6e9f4585a054e5fb0a86b42c94d0d9b/rough.png"
+          style="max-width:100%;height:auto;"></td>
+      <td><video width="100%" loop autoplay laysinline muted>
+          <source
+            src="./data/500_objects_mat/ours/c6e9f4585a054e5fb0a86b42c94d0d9b/rough.mp4"
+            type="video/mp4">
+        </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+          <source
+            src="./data/500_objects_mat/gt/c6e9f4585a054e5fb0a86b42c94d0d9b/rough.mp4"
+            type="video/mp4">
+        </video></td>
+    </tr>
+    <tr>
+      <td><img
+          src="./data/500_objects_mat/input/c6e9f4585a054e5fb0a86b42c94d0d9b/Metal.png"
+          style="max-width:100%;height:auto;"></td>
+      <td><video width="100%" loop autoplay laysinline muted>
+          <source
+            src="./data/500_objects_mat/ours/c6e9f4585a054e5fb0a86b42c94d0d9b/Metal.mp4"
+            type="video/mp4">
+        </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+          <source
+            src="./data/500_objects_mat/gt/c6e9f4585a054e5fb0a86b42c94d0d9b/Metal.mp4"
+            type="video/mp4">
+        </video></td>
+    </tr>
+    <tr>
+      <td><img
+          src="./data/500_objects_mat/input/c6e9f4585a054e5fb0a86b42c94d0d9b/plastic.png"
+          style="max-width:100%;height:auto;"></td>
+      <td><video width="100%" loop autoplay laysinline muted>
+          <source
+            src="./data/500_objects_mat/ours/c6e9f4585a054e5fb0a86b42c94d0d9b/plastic.mp4"
+            type="video/mp4">
+        </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+          <source
+            src="./data/500_objects_mat/gt/c6e9f4585a054e5fb0a86b42c94d0d9b/plastic.mp4"
+            type="video/mp4">
+        </video></td>
+    </tr>
+    <tr>
+      <td><img
+          src="./data/500_objects_mat/input/c6e9f4585a054e5fb0a86b42c94d0d9b/glass.png"
+          style="max-width:100%;height:auto;"></td>
+      <td><video width="100%" loop autoplay laysinline muted>
+          <source
+            src="./data/500_objects_mat/ours/c6e9f4585a054e5fb0a86b42c94d0d9b/glass.mp4"
+            type="video/mp4">
+        </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+          <source
+            src="./data/500_objects_mat/gt/c6e9f4585a054e5fb0a86b42c94d0d9b/glass.mp4"
+            type="video/mp4">
+        </video></td>
+    </tr>
+    <!-- ####################################### -->
+    <tr>
+      <td><img
+          src="./data/500_objects_mat/input/5689a9525a2c425d93f7d483b93d8cfa/rough.png"
+          style="max-width:100%;height:auto;"></td>
+      <td><video width="100%" loop autoplay laysinline muted>
+          <source
+            src="./data/500_objects_mat/ours/5689a9525a2c425d93f7d483b93d8cfa/rough.mp4"
+            type="video/mp4">
+        </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+          <source
+            src="./data/500_objects_mat/gt/5689a9525a2c425d93f7d483b93d8cfa/rough.mp4"
+            type="video/mp4">
+        </video></td>
+    </tr>
+    <tr>
+      <td><img
+          src="./data/500_objects_mat/input/5689a9525a2c425d93f7d483b93d8cfa/Metal.png"
+          style="max-width:100%;height:auto;"></td>
+      <td><video width="100%" loop autoplay laysinline muted>
+          <source
+            src="./data/500_objects_mat/ours/5689a9525a2c425d93f7d483b93d8cfa/Metal.mp4"
+            type="video/mp4">
+        </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+          <source
+            src="./data/500_objects_mat/gt/5689a9525a2c425d93f7d483b93d8cfa/Metal.mp4"
+            type="video/mp4">
+        </video></td>
+    </tr>
+    <tr>
+      <td><img
+          src="./data/500_objects_mat/input/5689a9525a2c425d93f7d483b93d8cfa/plastic.png"
+          style="max-width:100%;height:auto;"></td>
+      <td><video width="100%" loop autoplay laysinline muted>
+          <source
+            src="./data/500_objects_mat/ours/5689a9525a2c425d93f7d483b93d8cfa/plastic.mp4"
+            type="video/mp4">
+        </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+          <source
+            src="./data/500_objects_mat/gt/5689a9525a2c425d93f7d483b93d8cfa/plastic.mp4"
+            type="video/mp4">
+        </video></td>
+    </tr>
+    <tr>
+      <td><img
+          src="./data/500_objects_mat/input/5689a9525a2c425d93f7d483b93d8cfa/glass.png"
+          style="max-width:100%;height:auto;"></td>
+      <td><video width="100%" loop autoplay laysinline muted>
+          <source
+            src="./data/500_objects_mat/ours/5689a9525a2c425d93f7d483b93d8cfa/glass.mp4"
+            type="video/mp4">
+        </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+          <source
+            src="./data/500_objects_mat/gt/5689a9525a2c425d93f7d483b93d8cfa/glass.mp4"
+            type="video/mp4">
+        </video></td>
+    </tr>
+    <!-- ####################################### -->
+    <tr>
+      <td><img
+          src="./data/500_objects_mat/input/c1cbd15423b74c1a84517e6bc331d15f/rough.png"
+          style="max-width:100%;height:auto;"></td>
+      <td><video width="100%" loop autoplay laysinline muted>
+          <source
+            src="./data/500_objects_mat/ours/c1cbd15423b74c1a84517e6bc331d15f/rough.mp4"
+            type="video/mp4">
+        </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+          <source
+            src="./data/500_objects_mat/gt/c1cbd15423b74c1a84517e6bc331d15f/rough.mp4"
+            type="video/mp4">
+        </video></td>
+    </tr>
+    <tr>
+      <td><img
+          src="./data/500_objects_mat/input/c1cbd15423b74c1a84517e6bc331d15f/Metal.png"
+          style="max-width:100%;height:auto;"></td>
+      <td><video width="100%" loop autoplay laysinline muted>
+          <source
+            src="./data/500_objects_mat/ours/c1cbd15423b74c1a84517e6bc331d15f/Metal.mp4"
+            type="video/mp4">
+        </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+          <source
+            src="./data/500_objects_mat/gt/c1cbd15423b74c1a84517e6bc331d15f/Metal.mp4"
+            type="video/mp4">
+        </video></td>
+    </tr>
+    <tr>
+      <td><img
+          src="./data/500_objects_mat/input/c1cbd15423b74c1a84517e6bc331d15f/plastic.png"
+          style="max-width:100%;height:auto;"></td>
+      <td><video width="100%" loop autoplay laysinline muted>
+          <source
+            src="./data/500_objects_mat/ours/c1cbd15423b74c1a84517e6bc331d15f/plastic.mp4"
+            type="video/mp4">
+        </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+          <source
+            src="./data/500_objects_mat/gt/c1cbd15423b74c1a84517e6bc331d15f/plastic.mp4"
+            type="video/mp4">
+        </video></td>
+    </tr>
+    <tr>
+      <td><img
+          src="./data/500_objects_mat/input/c1cbd15423b74c1a84517e6bc331d15f/glass.png"
+          style="max-width:100%;height:auto;"></td>
+      <td><video width="100%" loop autoplay laysinline muted>
+          <source
+            src="./data/500_objects_mat/ours/c1cbd15423b74c1a84517e6bc331d15f/glass.mp4"
+            type="video/mp4">
+        </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+          <source
+            src="./data/500_objects_mat/gt/c1cbd15423b74c1a84517e6bc331d15f/glass.mp4"
+            type="video/mp4">
+        </video></td>
+    </tr>
+    <!-- ####################################### -->
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+
+
+</html>

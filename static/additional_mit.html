@@ -1,0 +1,262 @@
+<html>
+
+<head>
+  <script type="text/javascript" language="javascript"
+    src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+  <script type="text/javascript" language="javascript"
+    src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+  <script type="text/javascript" language="javascript"
+    src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.colVis.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+
+  <link
+    href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+  </link>
+  <style>
+    .plotly-graph-div {
+      margin: auto;
+    }
+
+    table {
+      background-color: white;
+      color: white;
+    }
+
+    table.dataTable.compact tbody th,
+    table.dataTable.compact tbody td {
+      padding: 4px;
+      background-color: black;
+    }
+
+    .dataTables_wrapper .dataTables_length,
+    .dataTables_wrapper .dataTables_filter,
+    .dataTables_wrapper .dataTables_info,
+    .dataTables_wrapper .dataTables_processing,
+    .dataTables_wrapper .dataTables_paginate {
+      color: #000000;
+    }
+
+    table.dataTable.cell-border tbody th,
+    table.dataTable.cell-border tbody td {
+      border-top: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+      border-bottom: 1px solid white;
+    }
+
+    table.dataTable thead td {
+      border-bottom: 1px solid #fff;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+      box-sizing: border-box;
+      display: inline-block;
+      min-width: 1.5em;
+      padding: 0.5em 1em;
+      margin-left: 2px;
+      text-align: center;
+      text-decoration: none !important;
+      cursor: pointer;
+      *cursor: hand;
+      color: #fff !important;
+      border: 1px solid transparent;
+      border-radius: 2px;
+    }
+  </style>
+
+</head>
+
+<body bgcolor='white'>
+  <hr>
+  <div
+    style="text-align:center; font-family: 'Google Sans', sans-serif; font-size:30px;color:black;">
+    GenLit: Probing Image-to-Video Models with Controllable Relighting <br> Additional results for Diverse Objects.</div><br>
+  <div
+    style="text-align:center; font-family: 'Google Sans', sans-serif; font-size:20px;color:black;">
+    <a href="../index.html"><u>Back to project page</u></a>
+  </div>
+  <table id="myTable" class="cell-border compact stripe">
+    <thead>
+      <tr style="font-family: 'Google Sans', sans-serif; color:#000000">
+        <th>Prediction</th>
+        <th>GT</th>
+
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <!-- ####################################### -->
+      <tr>
+        <!-- ####################################### -->
+        <tr>
+          <td><video width="100%" loop autoplay playsinline muted>
+              <source
+                src="./data/mit/ours/everett_dining2_2.mp4"
+                type="video/mp4">
+            </video></td>
+          <td><video width="100%" loop autoplay playsinline muted>
+              <source
+                src="./data/mit/gt/everett_dining2_2.mp4"
+                type="video/mp4">
+            </video></td>
+        </tr>
+        <!-- ####################################### -->
+        <tr>
+          <td><video width="100%" loop autoplay playsinline muted>
+              <source
+                src="./data/mit/ours/everett_kitchen5_3.mp4"
+                type="video/mp4">
+            </video></td>
+          <td><video width="100%" loop autoplay playsinline muted>
+              <source
+                src="./data/mit/gt/everett_kitchen5_3.mp4"
+                type="video/mp4">
+            </video></td>
+        </tr>
+        <!-- ####################################### -->
+        <tr>
+          <td><video width="100%" loop autoplay playsinline muted>
+              <source
+                src="./data/mit/ours/everett_kitchen8_2.mp4"
+                type="video/mp4">
+            </video></td>
+          <td><video width="100%" loop autoplay playsinline muted>
+              <source
+                src="./data/mit/gt/everett_kitchen8_2.mp4"
+                type="video/mp4">
+            </video></td>
+        </tr>
+        <!-- ####################################### -->
+        <tr>
+          <td><video width="100%" loop autoplay playsinline muted>
+              <source
+                src="./data/mit/ours/everett_kitchen12_6.mp4"
+                type="video/mp4">
+            </video></td>
+          <td><video width="100%" loop autoplay playsinline muted>
+              <source
+                src="./data/mit/gt/everett_kitchen12_6.mp4"
+                type="video/mp4">
+            </video></td>
+        </tr>
+        <!-- ####################################### -->
+        <tr>
+          <td><video width="100%" loop autoplay playsinline muted>
+              <source
+                src="./data/mit/ours/everett_kitchen17_7.mp4"
+                type="video/mp4">
+            </video></td>
+          <td><video width="100%" loop autoplay playsinline muted>
+              <source
+                src="./data/mit/gt/everett_kitchen17_7.mp4"
+                type="video/mp4">
+            </video></td>
+        </tr>
+        <!-- ####################################### -->
+        <tr>
+          <td><video width="100%" loop autoplay playsinline muted>
+              <source
+                src="./data/mit/ours/everett_lobby3_7.mp4"
+                type="video/mp4">
+            </video></td>
+          <td><video width="100%" loop autoplay playsinline muted>
+              <source
+                src="./data/mit/gt/everett_lobby3_7.mp4"
+                type="video/mp4">
+            </video></td>
+        </tr>
+        <!-- ####################################### -->
+        <tr>
+          <td><video width="100%" loop autoplay playsinline muted>
+              <source
+                src="./data/mit/ours/everett_lobby6_2.mp4"
+                type="video/mp4">
+            </video></td>
+          <td><video width="100%" loop autoplay playsinline muted>
+              <source
+                src="./data/mit/gt/everett_lobby6_2.mp4"
+                type="video/mp4">
+            </video></td>
+        </tr>
+        <!-- ####################################### -->
+        <tr>
+          <td><video width="100%" loop autoplay playsinline muted>
+              <source
+                src="./data/mit/ours/everett_lobby13_2.mp4"
+                type="video/mp4">
+            </video></td>
+          <td><video width="100%" loop autoplay playsinline muted>
+              <source
+                src="./data/mit/gt/everett_lobby13_2.mp4"
+                type="video/mp4">
+            </video></td>
+        </tr>
+        <!-- ####################################### -->
+        <tr>
+          <td><video width="100%" loop autoplay playsinline muted>
+              <source
+                src="./data/mit/ours/everett_lobby19_6.mp4"
+                type="video/mp4">
+            </video></td>
+          <td><video width="100%" loop autoplay playsinline muted>
+              <source
+                src="./data/mit/gt/everett_lobby19_6.mp4"
+                type="video/mp4">
+            </video></td>
+        </tr>
+        <!-- ####################################### -->
+        <tr>
+          <td><video width="100%" loop autoplay playsinline muted>
+              <source
+                src="./data/mit/ours/everett_lobby4_1.mp4"
+                type="video/mp4">
+            </video></td>
+          <td><video width="100%" loop autoplay playsinline muted>
+              <source
+                src="./data/mit/gt/everett_lobby4_1.mp4"
+                type="video/mp4">
+            </video></td>
+        </tr>
+        <!-- ####################################### -->
+        <tr>
+          <td><video width="100%" loop autoplay playsinline muted>
+              <source
+                src="./data/mit/ours/everett_lobby4_2.mp4"
+                type="video/mp4">
+            </video></td>
+          <td><video width="100%" loop autoplay playsinline muted>
+              <source
+                src="./data/mit/gt/everett_lobby4_2.mp4"
+                type="video/mp4">
+            </video></td>
+        </tr>
+        <!-- ####################################### -->
+        <tr>
+          <td><video width="100%" loop autoplay playsinline muted>
+              <source
+                src="./data/mit/ours/everett_lobby4_6.mp4"
+                type="video/mp4">
+            </video></td>
+          <td><video width="100%" loop autoplay playsinline muted>
+              <source
+                src="./data/mit/gt/everett_lobby4_6.mp4"
+                type="video/mp4">
+            </video></td>
+        </tr>
+        <!-- ####################################### -->
+      </tr>
+      
+
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+
+
+</html>
