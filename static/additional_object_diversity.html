@@ -1,0 +1,376 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="../static/css/bulma.min.css">
+  <script type="text/javascript" language="javascript"
+    src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+  <script type="text/javascript" language="javascript"
+    src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+  <script type="text/javascript" language="javascript"
+    src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.colVis.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+
+  <link
+    href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+  </link>
+  <style>
+    .plotly-graph-div {
+      margin: auto;
+    }
+
+    table {
+      background-color: white;
+      color: white;
+    }
+
+    table.dataTable.compact tbody th,
+    table.dataTable.compact tbody td {
+      padding: 4px;
+      background-color: black;
+    }
+
+    .dataTables_wrapper .dataTables_length,
+    .dataTables_wrapper .dataTables_filter,
+    .dataTables_wrapper .dataTables_info,
+    .dataTables_wrapper .dataTables_processing,
+    .dataTables_wrapper .dataTables_paginate {
+      color: #000000;
+    }
+
+    table.dataTable.cell-border tbody th,
+    table.dataTable.cell-border tbody td {
+      border-top: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+      border-bottom: 1px solid white;
+    }
+
+    table.dataTable thead td {
+      border-bottom: 1px solid #fff;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+      box-sizing: border-box;
+      display: inline-block;
+      min-width: 1.5em;
+      padding: 0.5em 1em;
+      margin-left: 2px;
+      text-align: center;
+      text-decoration: none !important;
+      cursor: pointer;
+      *cursor: hand;
+      color: #fff !important;
+      border: 1px solid transparent;
+      border-radius: 2px;
+    }
+
+    .table-div {
+      display: flex;              /* Enables flexbox layout */
+      justify-content: center;    /* Centers the table horizontally */
+      height: 100vh;              /* Ensures the body takes up the full height of the viewport */
+      margin: 0;                  /* Removes default margins */
+    }
+
+    #myTable {
+      table-layout: fixed;
+      max-width: 100%;
+    }
+
+    #myTable td,
+    #myTable th {
+      width: 33.33%; /* adjust based on columns */
+    }
+
+    #myTable img,
+    #myTable video {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    #myTable img {
+      width:100%
+    }
+
+  </style>
+
+</head>
+
+<body bgcolor='white'>
+  <hr>
+  <div
+    style="text-align:center; font-family: 'Google Sans', sans-serif; font-size:30px;color:black;">
+    GenLit: Probing Image-to-Video Models with Controllable Relighting <br> Additional results for Diverse Objects.</div><br>
+  <div
+    style="text-align:center; font-family: 'Google Sans', sans-serif; font-size:20px;color:black;">
+    <a class="button is-light  is-success  is-small" href="../index.html">Back to project page</a>
+  </div>
+
+  <br>
+
+  <div class="table-div">
+    <table id="myTable" class="cell-border compact stripe">
+      <thead>
+      <tr style="font-family: 'Google Sans', sans-serif; color:#000000; text-align: center">
+        <th>Input </th>
+        <th>Prediction</th>
+        <th>GT</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <!-- ####################################### -->
+      <tr>
+        <td><img
+            src="./data/500_objects/input/d54e1c79c9ab4e409d2107fe7eb999b9/000.png"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/500_objects/ours/d54e1c79c9ab4e409d2107fe7eb999b9/000.mp4"
+              type="video/mp4">
+          </video></td>
+          <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/500_objects/gt/d54e1c79c9ab4e409d2107fe7eb999b9/000.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <!-- ####################################### -->
+      <!-- <tr>
+        <td><img
+            src="./data/500_objects/input/5b9e03a46de84bd58d3894cab9f40a78/000.png"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/500_objects/ours/5b9e03a46de84bd58d3894cab9f40a78/001.mp4"
+              type="video/mp4">
+          </video></td>
+          <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/500_objects/gt/5b9e03a46de84bd58d3894cab9f40a78/001.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr> -->
+      <!-- ####################################### -->
+      <tr>
+        <td><img
+            src="./data/500_objects/input/a3141b91d24b47b4a5e48e51814ef162/000.png"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/500_objects/ours/a3141b91d24b47b4a5e48e51814ef162/000.mp4"
+              type="video/mp4">
+          </video></td>
+          <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/500_objects/gt/a3141b91d24b47b4a5e48e51814ef162/000.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <!-- ####################################### -->
+      <tr>
+        <td><img
+            src="./data/500_objects/input/c5bfdf003ead4c4793f4e9b93a9b1b79/000.png"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/500_objects/ours/c5bfdf003ead4c4793f4e9b93a9b1b79/001.mp4"
+              type="video/mp4">
+          </video></td>
+          <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/500_objects/gt/c5bfdf003ead4c4793f4e9b93a9b1b79/001.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <!-- ####################################### -->
+      <tr>
+        <td><img
+            src="./data/500_objects/input/c100d8b9e4684e6e9be20c16c74cc257/000.png"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/500_objects/ours/c100d8b9e4684e6e9be20c16c74cc257/000.mp4"
+              type="video/mp4">
+          </video></td>
+          <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/500_objects/gt/c100d8b9e4684e6e9be20c16c74cc257/000.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <!-- ####################################### -->
+      <tr>
+        <td><img
+            src="./data/500_objects/input/c847a6d2912643cd96e1ada74beea902/000.png"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/500_objects/ours/c847a6d2912643cd96e1ada74beea902/001.mp4"
+              type="video/mp4">
+          </video></td>
+          <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/500_objects/gt/c847a6d2912643cd96e1ada74beea902/001.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <!-- ####################################### -->
+      <tr>
+        <td><img
+            src="./data/500_objects/input/f7562dd4f11f4cbaa2cac58c38a85e1c/000.png"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/500_objects/ours/f7562dd4f11f4cbaa2cac58c38a85e1c/000.mp4"
+              type="video/mp4">
+          </video></td>
+          <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/500_objects/gt/f7562dd4f11f4cbaa2cac58c38a85e1c/000.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <!-- ####################################### -->
+      <!-- <tr>
+        <td><img
+            src="./data/500_objects/input/3289c148eda54700a379685262c62480/000.png"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/500_objects/ours/3289c148eda54700a379685262c62480/001.mp4"
+              type="video/mp4">
+          </video></td>
+          <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/500_objects/gt/3289c148eda54700a379685262c62480/001.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr> -->
+      <!-- ####################################### -->
+      <tr>
+        <td><img
+            src="./data/500_objects/input/bdd36c94f3f74f22b02b8a069c8d97b7/000.png"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/500_objects/ours/bdd36c94f3f74f22b02b8a069c8d97b7/001.mp4"
+              type="video/mp4">
+          </video></td>
+          <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/500_objects/gt/bdd36c94f3f74f22b02b8a069c8d97b7/001.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <!-- ####################################### -->
+      <tr>
+        <td><img
+            src="./data/500_objects/input/33ec066dd147462494ff1ab544bcc469/000.png"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/500_objects/ours/33ec066dd147462494ff1ab544bcc469/001.mp4"
+              type="video/mp4">
+          </video></td>
+          <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/500_objects/gt/33ec066dd147462494ff1ab544bcc469/001.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <!-- ####################################### -->
+      <tr>
+        <td><img
+            src="./data/500_objects/input/b4ed18118f2249b2bb28af78b7fb7a1d/000.png"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/500_objects/ours/b4ed18118f2249b2bb28af78b7fb7a1d/000.mp4"
+              type="video/mp4">
+          </video></td>
+          <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/500_objects/gt/b4ed18118f2249b2bb28af78b7fb7a1d/000.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <!-- ####################################### -->
+      <tr>
+        <td><img
+            src="./data/500_objects/input/cdc4064cab1947e7995598aedc17ecc8/000.png"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/500_objects/ours/cdc4064cab1947e7995598aedc17ecc8/001.mp4"
+              type="video/mp4">
+          </video></td>
+          <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/500_objects/gt/cdc4064cab1947e7995598aedc17ecc8/001.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <!-- ####################################### -->
+      <tr>
+        <td><img
+            src="./data/500_objects/input/1f6d5dd9a2d9432c87e626fa0a88c5d5/000.png"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/500_objects/ours/1f6d5dd9a2d9432c87e626fa0a88c5d5/000.mp4"
+              type="video/mp4">
+          </video></td>
+          <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/500_objects/gt/1f6d5dd9a2d9432c87e626fa0a88c5d5/000.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <!-- ####################################### -->
+      <tr>
+        <td><img
+            src="./data/500_objects/input/7a912357ce1845ad940e81971fd053f1/000.png"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/500_objects/ours/7a912357ce1845ad940e81971fd053f1/000.mp4"
+              type="video/mp4">
+          </video></td>
+          <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/500_objects/gt/7a912357ce1845ad940e81971fd053f1/000.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <!-- ####################################### -->
+      <tr>
+        <td><img
+            src="./data/500_objects/input/c0444bbe112c4c02af1e1d3ee3a04184/000.png"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/500_objects/ours/c0444bbe112c4c02af1e1d3ee3a04184/001.mp4"
+              type="video/mp4">
+          </video></td>
+          <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/500_objects/gt/c0444bbe112c4c02af1e1d3ee3a04184/001.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <!-- ####################################### -->
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+</body>
+
+
+</html>
