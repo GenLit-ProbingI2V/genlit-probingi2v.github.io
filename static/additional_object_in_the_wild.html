@@ -1,0 +1,219 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="../static/css/bulma.min.css">
+  <script type="text/javascript" language="javascript"
+    src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+  <script type="text/javascript" language="javascript"
+    src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+  <script type="text/javascript" language="javascript"
+    src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.colVis.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+
+  <link
+    href="https://fonts.googleapis.com/css?family=Linux+Libertine:400,400i,700,700i"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+  </link>
+  <style>
+    .plotly-graph-div {
+      margin: auto;
+    }
+
+    body {
+      font-family: 'Linux Libertine', serif;
+    }
+
+    table {
+      background-color: white;
+      color: white;
+    }
+
+    table.dataTable.compact tbody th,
+    table.dataTable.compact tbody td {
+      padding: 4px;
+      background-color: black;
+    }
+
+    .dataTables_wrapper .dataTables_length,
+    .dataTables_wrapper .dataTables_filter,
+    .dataTables_wrapper .dataTables_info,
+    .dataTables_wrapper .dataTables_processing,
+    .dataTables_wrapper .dataTables_paginate {
+      color: #000000;
+    }
+
+    table.dataTable.cell-border tbody th,
+    table.dataTable.cell-border tbody td {
+      border-top: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+      border-bottom: 1px solid white;
+    }
+
+    table.dataTable thead td {
+      border-bottom: 1px solid #fff;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+      box-sizing: border-box;
+      display: inline-block;
+      min-width: 1.5em;
+      padding: 0.5em 1em;
+      margin-left: 2px;
+      text-align: center;
+      text-decoration: none !important;
+      cursor: pointer;
+      *cursor: hand;
+      color: #fff !important;
+      border: 1px solid transparent;
+      border-radius: 2px;
+    }
+
+    .table-div {
+        display: flex;              /* Enables flexbox layout */
+        justify-content: center;    /* Centers the table horizontally */
+        height: 100vh;              /* Ensures the body takes up the full height of the viewport */
+        margin: 0;                  /* Removes default margins */
+    }
+
+    #myTable {
+        table-layout: fixed;
+        max-width: 100%;
+    }
+
+    #myTable td,
+    #myTable th {
+        width: 25%; /* adjust based on columns */
+        padding: 10px; /* Add padding between cells */
+    }
+
+    #myTable img,
+    #myTable video {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+    #myTable img {
+        width:100%
+    }
+
+  </style>
+
+</head>
+
+<body bgcolor='white'>
+  <hr>
+  <div
+    style="text-align:center; font-family: 'Linux Libertine', serif; font-size:30px;color:black;">
+    GenLit: Reformulating Single-Image Relighting as Video Generation <br> Additional results for Object-Level Relighting: Generalization to Real Images</div><br>
+  <div
+    style="text-align:center; font-family: 'Linux Libertine', serif; font-size:20px;color:black;">
+    <a class="button is-light  is-success is-small" href="../index.html">Back to project page</a>
+  </div>
+
+  <div class="table-div">
+      <table id="myTable" class="cell-border compact stripe">
+          <thead>
+          <tr style="font-family: 'Linux Libertine', serif; color:#000000; text-align: center">
+              <th>Input | Ours | Reference</th>
+              <th>Input | Ours | Reference</th>
+          </tr>
+          </thead>
+          <tbody>
+          <!-- IMG_1979 -->
+          <tr>
+              <td><video width="100%" loop autoplay playsinline muted>
+                  <source src="data/object_in_the_wild/IMG_1979/2_images/output.mp4" type="video/mp4">
+              </video></td>
+              <td><video width="100%" loop autoplay playsinline muted>
+                  <source src="data/object_in_the_wild/IMG_1979/3_images/output.mp4" type="video/mp4">
+              </video></td>
+          </tr>
+          <!-- IMG_6684 -->
+          <tr>
+            <td><video width="100%" loop autoplay playsinline muted>
+                <source src="data/object_in_the_wild/IMG_6684/16_images/output.mp4" type="video/mp4">
+            </video></td>
+            <td><video width="100%" loop autoplay playsinline muted>
+                <source src="data/object_in_the_wild/IMG_6684/17_images/output.mp4" type="video/mp4">
+            </video></td>
+        </tr>
+          <!-- IMG_5979 -->
+          <tr>
+              <td><video width="100%" loop autoplay playsinline muted>
+                  <source src="data/object_in_the_wild/IMG_2075/2_images/output.mp4" type="video/mp4">
+              </video></td>
+              <td><video width="100%" loop autoplay playsinline muted>
+                  <source src="data/object_in_the_wild/IMG_2075/3_images/output.mp4" type="video/mp4">
+              </video></td>
+          </tr>
+
+        <!-- IMG_5979 -->
+        <tr>
+            <td><video width="100%" loop autoplay playsinline muted>
+                <source src="data/object_in_the_wild/IMG_1729/2_images/output.mp4" type="video/mp4">
+            </video></td>
+            <td><video width="100%" loop autoplay playsinline muted>
+                <source src="data/object_in_the_wild/IMG_1729/3_images/output.mp4" type="video/mp4">
+            </video></td>
+        </tr>
+          <!-- IMG_6055 -->
+          <tr>
+              <td><video width="100%" loop autoplay playsinline muted>
+                  <source src="data/object_in_the_wild/IMG_6055/10_images/output.mp4" type="video/mp4">
+              </video></td>
+              <td><video width="100%" loop autoplay playsinline muted>
+                  <source src="data/object_in_the_wild/IMG_6055/11_images/output.mp4" type="video/mp4">
+              </video></td>
+          </tr>
+
+          <!-- IMG_6643 -->
+          <tr>
+              <td><video width="100%" loop autoplay playsinline muted>
+                  <source src="data/object_in_the_wild/IMG_6643/2_images/output.mp4" type="video/mp4">
+              </video></td>
+              <td><video width="100%" loop autoplay playsinline muted>
+                  <source src="data/object_in_the_wild/IMG_6643/3_images/output.mp4" type="video/mp4">
+              </video></td>
+          </tr>
+
+          <!-- IMG_6677 -->
+          <tr>
+              <td><video width="100%" loop autoplay playsinline muted>
+                  <source src="data/object_in_the_wild/IMG_6677/14_images/output.mp4" type="video/mp4">
+              </video></td>
+              <td><video width="100%" loop autoplay playsinline muted>
+                  <source src="data/object_in_the_wild/IMG_6677/15_images/output.mp4" type="video/mp4">
+              </video></td>
+          </tr>
+
+          <!-- IMG_0146 -->
+          <tr>
+            <td><video width="100%" loop autoplay playsinline muted>
+                <source src="data/object_in_the_wild/IMG_0146/0_images/output.mp4" type="video/mp4">
+            </video></td>
+            <td><video width="100%" loop autoplay playsinline muted>
+                <source src="data/object_in_the_wild/IMG_0146/1_images/output.mp4" type="video/mp4">
+            </video></td>
+        </tr>
+
+        <!-- IMG_5979 -->
+        <tr>
+        <td><video width="100%" loop autoplay playsinline muted>
+            <source src="data/object_in_the_wild/IMG_5979/8_images/output.mp4" type="video/mp4">
+        </video></td>
+        <td><video width="100%" loop autoplay playsinline muted>
+            <source src="data/object_in_the_wild/IMG_5979/9_images/output.mp4" type="video/mp4">
+        </video></td>
+    </tr>
+          </tbody>
+      </table>
+  </div>
+
+</body>
+
+
+</html>

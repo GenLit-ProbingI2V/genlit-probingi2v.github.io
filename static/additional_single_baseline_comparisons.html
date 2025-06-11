@@ -1,0 +1,334 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="../static/css/bulma.min.css">
+  <script type="text/javascript" language="javascript"
+    src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+  <script type="text/javascript" language="javascript"
+    src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+  <script type="text/javascript" language="javascript"
+    src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.colVis.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+
+  <link
+    href="https://fonts.googleapis.com/css?family=Linux+Libertine:400,400i,700,700i"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+  </link>
+  <style>
+    body {
+      font-family: 'Linux Libertine', serif;
+    }
+
+    .plotly-graph-div {
+      margin: auto;
+    }
+
+    table {
+      background-color: white;
+      color: white;
+    }
+
+    table.dataTable.compact tbody th,
+    table.dataTable.compact tbody td {
+      padding: 4px;
+      background-color: black;
+    }
+
+    .dataTables_wrapper .dataTables_length,
+    .dataTables_wrapper .dataTables_filter,
+    .dataTables_wrapper .dataTables_info,
+    .dataTables_wrapper .dataTables_processing,
+    .dataTables_wrapper .dataTables_paginate {
+      color: #000000;
+    }
+
+    table.dataTable.cell-border tbody th,
+    table.dataTable.cell-border tbody td {
+      border-top: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+      border-bottom: 1px solid white;
+    }
+
+    table.dataTable thead td {
+      border-bottom: 1px solid #fff;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+      box-sizing: border-box;
+      display: inline-block;
+      min-width: 1.5em;
+      padding: 0.5em 1em;
+      margin-left: 2px;
+      text-align: center;
+      text-decoration: none !important;
+      cursor: pointer;
+      *cursor: hand;
+      color: #fff !important;
+      border: 1px solid transparent;
+      border-radius: 2px;
+    }
+
+    .table-div {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    #myTable {
+        table-layout: fixed;
+        max-width: 100%;
+        border-collapse: collapse;
+        border: none;
+    }
+
+    #myTable td,
+    #myTable th {
+        width: 14.28%;
+        height: 220px;
+        padding: 0;
+        margin: 0;
+        border: none;
+        vertical-align: top;
+    }
+
+    #myTable video {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+    }
+
+    .button {
+        font-family: 'Linux Libertine', serif;
+    }
+
+    /* Override DataTables default spacing */
+    .dataTables_wrapper .dataTables_scroll,
+    .dataTables_wrapper .dataTables_scrollBody,
+    .dataTables_wrapper .dataTables_scrollHead {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .dataTables_wrapper .dataTables_scrollBody table {
+        border-spacing: 0 !important;
+        border-collapse: collapse !important;
+    }
+
+    #myTable th {
+        width: 14.28%;
+        height: 20px; /* Reduced height for header */
+        padding: 0;
+        margin: 0;
+        border: none;
+        vertical-align: middle;
+        font-family: 'Linux Libertine', serif;
+        color: #000000;
+        text-align: center;
+        line-height: 1;
+    }
+
+  </style>
+
+</head>
+
+<body bgcolor='white'>
+  <hr>
+  <div
+    style="text-align:center; font-family: 'Linux Libertine', serif; font-size:30px;color:black;">
+    GenLit: Reformulating Single-Image Relighting as Video Generation <br> Additional results for Object-Level Comparisons.</div><br>
+  <div
+    style="text-align:center; font-family: 'Linux Libertine', serif; font-size:20px;color:black;">
+    <a class="button is-light  is-success is-small" href="../index.html">Back to project page</a>
+  </div>
+
+  <br>
+
+  <div class="table-div">
+      <table id="myTable">
+          <thead>
+              <tr>
+                  <th>Input</th>
+                  <th>WS-SIR</th>
+                  <th>Neural Gaffer</th>
+                  <th>IC-Light</th>
+                  <th>DelightNet</th>
+                  <th>Ours</th>
+                  <th>GT</th>
+              </tr>
+          </thead>
+          <tbody>
+
+              <tr>
+                  <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+                      <source src="./data/baselines_single_object/CheeseBox_01_input.mp4" type="video/mp4">
+                  </video></td>
+                  <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+                      <source src="./data/baselines_single_object/CheeseBox_01_wssir.mp4" type="video/mp4">
+                  </video></td>
+                  <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+                      <source src="./data/baselines_single_object/CheeseBox_01_neural_gaffer.mp4" type="video/mp4">
+                  </video></td>
+                  <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+                      <source src="./data/baselines_single_object/CheeseBox_01_ic_light.mp4" type="video/mp4">
+                  </video></td>
+                  <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+                      <source src="./data/baselines_single_object/CheeseBox_01_delightnet.mp4" type="video/mp4">
+                  </video></td>
+                  <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+                      <source src="./data/baselines_single_object/CheeseBox_01_ours.mp4" type="video/mp4">
+                  </video></td>
+                  <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+                      <source src="./data/baselines_single_object/CheeseBox_01_gt.mp4" type="video/mp4">
+                  </video></td>
+              </tr>
+              <tr>
+                  <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+                      <source src="./data/baselines_single_object/steel_frame_shelves_03_input.mp4" type="video/mp4">
+                  </video></td>
+                  <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+                      <source src="./data/baselines_single_object/steel_frame_shelves_03_wssir.mp4" type="video/mp4">
+                  </video></td>
+                  <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+                      <source src="./data/baselines_single_object/steel_frame_shelves_03_neural_gaffer.mp4" type="video/mp4">
+                  </video></td>
+                  <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+                      <source src="./data/baselines_single_object/steel_frame_shelves_03_ic_light.mp4" type="video/mp4">
+                  </video></td>
+                  <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+                      <source src="./data/baselines_single_object/steel_frame_shelves_03_delightnet.mp4" type="video/mp4">
+                  </video></td>
+                  <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+                      <source src="./data/baselines_single_object/steel_frame_shelves_03_ours.mp4" type="video/mp4">
+                  </video></td>
+                  <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+                      <source src="./data/baselines_single_object/steel_frame_shelves_03_gt.mp4" type="video/mp4">
+                  </video></td>
+              </tr>
+              <tr>
+                <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+                    <source src="./data/baselines_single_object/9f79ee359a23478ab9d2cc0d0da3fc39_input.mp4" type="video/mp4">
+                </video></td>
+                <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+                    <source src="./data/baselines_single_object/9f79ee359a23478ab9d2cc0d0da3fc39_wssir.mp4" type="video/mp4">
+                </video></td>
+                <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+                    <source src="./data/baselines_single_object/9f79ee359a23478ab9d2cc0d0da3fc39_neural_gaffer.mp4" type="video/mp4">
+                </video></td>
+                <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+                    <source src="./data/baselines_single_object/9f79ee359a23478ab9d2cc0d0da3fc39_ic_light.mp4" type="video/mp4">
+                </video></td>
+                <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+                    <source src="./data/baselines_single_object/9f79ee359a23478ab9d2cc0d0da3fc39_delightnet.mp4" type="video/mp4">
+                </video></td>
+                <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+                    <source src="./data/baselines_single_object/9f79ee359a23478ab9d2cc0d0da3fc39_ours.mp4" type="video/mp4">
+                </video></td>
+                <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+                    <source src="./data/baselines_single_object/9f79ee359a23478ab9d2cc0d0da3fc39_gt.mp4" type="video/mp4">
+                </video></td>
+            </tr>
+            <tr>
+              <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+                  <source src="./data/baselines_single_object/579537e22b664e66a93e20917e6d0125_input.mp4" type="video/mp4">
+              </video></td>
+              <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+                  <source src="./data/baselines_single_object/579537e22b664e66a93e20917e6d0125_wssir.mp4" type="video/mp4">
+              </video></td>
+              <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+                  <source src="./data/baselines_single_object/579537e22b664e66a93e20917e6d0125_neural_gaffer.mp4" type="video/mp4">
+              </video></td>
+              <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+                  <source src="./data/baselines_single_object/579537e22b664e66a93e20917e6d0125_ic_light.mp4" type="video/mp4">
+              </video></td>
+              <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+                  <source src="./data/baselines_single_object/579537e22b664e66a93e20917e6d0125_delightnet.mp4" type="video/mp4">
+              </video></td>
+              <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+                  <source src="./data/baselines_single_object/579537e22b664e66a93e20917e6d0125_ours.mp4" type="video/mp4">
+              </video></td>
+              <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+                  <source src="./data/baselines_single_object/579537e22b664e66a93e20917e6d0125_gt.mp4" type="video/mp4">
+              </video></td>
+          </tr>
+          <tr>
+            <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+                <source src="./data/baselines_single_object/42c9bdc4d27a418daa19b2d5ff690095_delightnet.mp4" type="video/mp4">
+            </video></td>
+            <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+                <source src="./data/baselines_single_object/42c9bdc4d27a418daa19b2d5ff690095_wssir.mp4" type="video/mp4">
+            </video></td>
+            <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+                <source src="./data/baselines_single_object/42c9bdc4d27a418daa19b2d5ff690095_neural_gaffer.mp4" type="video/mp4">
+            </video></td>
+            <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+                <source src="./data/baselines_single_object/42c9bdc4d27a418daa19b2d5ff690095_ic_light.mp4" type="video/mp4">
+            </video></td>
+            <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+                <source src="./data/baselines_single_object/42c9bdc4d27a418daa19b2d5ff690095_delightnet.mp4" type="video/mp4">
+            </video></td>
+            <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+                <source src="./data/baselines_single_object/42c9bdc4d27a418daa19b2d5ff690095_ours.mp4" type="video/mp4">
+            </video></td>
+            <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+                <source src="./data/baselines_single_object/42c9bdc4d27a418daa19b2d5ff690095_gt.mp4" type="video/mp4">
+            </video></td>
+        </tr>
+        <tr>
+          <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+              <source src="./data/baselines_single_object/a5ea47eb11f24bc6a4d4e47caa30b6dd_input.mp4" type="video/mp4">
+          </video></td>
+          <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+              <source src="./data/baselines_single_object/a5ea47eb11f24bc6a4d4e47caa30b6dd_wssir.mp4" type="video/mp4">
+          </video></td>
+          <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+              <source src="./data/baselines_single_object/a5ea47eb11f24bc6a4d4e47caa30b6dd_neural_gaffer.mp4" type="video/mp4">
+          </video></td>
+          <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+              <source src="./data/baselines_single_object/a5ea47eb11f24bc6a4d4e47caa30b6dd_ic_light.mp4" type="video/mp4">
+          </video></td>
+          <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+              <source src="./data/baselines_single_object/a5ea47eb11f24bc6a4d4e47caa30b6dd_delightnet.mp4" type="video/mp4">
+          </video></td>
+          <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+              <source src="./data/baselines_single_object/a5ea47eb11f24bc6a4d4e47caa30b6dd_ours.mp4" type="video/mp4">
+          </video></td>
+          <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+              <source src="./data/baselines_single_object/a5ea47eb11f24bc6a4d4e47caa30b6dd_gt.mp4" type="video/mp4">
+          </video></td>
+      </tr>
+              <tr>
+                  <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+                      <source src="./data/baselines_single_object/bull_head_input.mp4" type="video/mp4">
+                  </video></td>
+                  <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+                      <source src="./data/baselines_single_object/bull_head_wssir.mp4" type="video/mp4">
+                  </video></td>
+                  <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+                      <source src="./data/baselines_single_object/bull_head_neural_gaffer.mp4" type="video/mp4">
+                  </video></td>
+                  <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+                      <source src="./data/baselines_single_object/bull_head_ic_light.mp4" type="video/mp4">
+                  </video></td>
+                  <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+                      <source src="./data/baselines_single_object/bull_head_delightnet.mp4" type="video/mp4">
+                  </video></td>
+                  <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+                      <source src="./data/baselines_single_object/bull_head_ours.mp4" type="video/mp4">
+                  </video></td>
+                  <td><video width="100%" height="100%" loop autoplay playsinline muted style="object-fit: contain;">
+                      <source src="./data/baselines_single_object/bull_head_gt.mp4" type="video/mp4">
+                  </video></td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+
+</body>
+
+</html>
